@@ -29,11 +29,11 @@ jobs:
       - name: installing node
         uses: actions/setup-node@v2-beta
         with:
-          version: 16
+          node-version: 16
 
       # Runs a set of commands using the runners shell
       - name: installing surge
         run: npm install --global surge
       
       - name: deploying on surge
-        run: surge ./ bootcamp2020-video01.surge.sh/ ${{secrets.SURGE_TOKEN}}
+        run: surge ./ bootcamp2020-video01.surge.sh --token ${{secrets.SURGE_TOKEN}}
